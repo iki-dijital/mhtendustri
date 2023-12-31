@@ -1,0 +1,50 @@
+#contact_page {
+  padding-block-end: 170px;
+  h2 {
+    font-size: 42px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+#contact_social_nav {
+  a {
+    svg {
+      fill: #718695;
+    }
+    &:hover {
+      svg {
+        fill: get-color(primary);
+      }
+    }
+  }
+}
+
+.contact_page_form {
+  span {
+    font-size: 42px;
+    color: #9d9d9d;
+  }
+  %input {
+    border-style: solid;
+    border-color: #b8b8b8;
+    border-width: 0 0 1px;
+    @include edit_placeholder {
+      color: #000;
+      opacity: 1;
+    }
+  }
+  input {
+    @extend %input;
+  }
+  textarea {
+    height: 220px;
+    resize: none;
+    @extend %input;
+  }
+  button {
+    font-size: 15px;
+    text-align: end;
+  }
+}

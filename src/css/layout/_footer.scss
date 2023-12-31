@@ -1,0 +1,58 @@
+footer {
+  padding-block-start: 144px;
+  & > img {
+    width: var(--container-width);
+    inset-inline-start: var(--container-margin);
+    height: calc(100% - 80px);
+    mix-blend-mode: overlay;
+  }
+  .list_title {
+    color: #344c5a;
+  }
+  .pagelist {
+    a {
+      transition: 0.3s margin;
+      &:hover {
+        margin: -10px 0 10px;
+      }
+    }
+  }
+  .contact_link {
+    &:hover {
+      padding-inline-end: 20px;
+    }
+  }
+  .footer_container {
+    margin-block-start: 140px;
+  }
+  .logo_wrapper{
+    .bevel_corner {
+      box-shadow: 0 0 0 500px get-color(primary);
+    }
+  }
+  .copy_wrapper{
+    .bevel_corner {
+      box-shadow: 0 0 0 1920px #fff;
+    }
+  }
+  .designed_by{
+    font-size: 10px;
+  }
+  @include max_responsive(md){
+    padding-block-start: 60px;
+    .footer_container{
+      margin-block-start: 60px;
+    }
+  }
+
+}
+
+#footer_social_nav {
+  a {
+    &:hover {
+      svg {
+        fill: get-color(primary);
+      }
+    }
+  }
+}

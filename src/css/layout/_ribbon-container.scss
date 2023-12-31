@@ -1,0 +1,18 @@
+.ribbon_container {
+  height: 134px;
+  width: calc(100% - 130px);
+  @include max_responsive(1750px, $custom:true){
+    width: calc(100% - 60px);
+  }
+  @include max_responsive(1620px, $custom:true){
+    width: calc(100% - 30px);
+  }
+}
+
+.bevel_corner {
+  width: 18px;
+  height: 18px;
+  margin: -9px;
+  transform: rotate(45deg);
+  background-color: transparent;
+}

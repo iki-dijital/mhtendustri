@@ -1,0 +1,36 @@
+body {
+  overflow-x: hidden;
+  font-family: Prompt, sans-serif;
+  &.show{
+    overflow: hidden;
+  }
+}
+html{
+  &.show{
+    overflow: hidden;
+  }
+}
+a {
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+:root{
+  @each $key, $color in $color-map{
+    --color-#{$key}: #{$color};
+  }
+}
+
+%paragraph-p-elem{
+  margin: 0 0 1.53em;
+  color: #515151;
+  @include get_font(400, 17px, 1.53);
+}

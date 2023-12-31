@@ -1,0 +1,52 @@
+@use 'sass:map';
+
+.header_lg {
+  top: 58px;
+  .logo_wrapper {
+    .bevel_corner {
+      box-shadow: 0 0 0 500px #fff;
+    }
+  }
+}
+
+#lang_nav {
+  a {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+#header_nav {
+  a {
+    &:hover {
+      padding: 0 8px 16px;
+    }
+  }
+}
+
+.header_contact {
+  span {
+    transition: 0.3s width, 0.3s margin, 0.3s opacity;
+  }
+  svg {
+    transition: 0.3s margin;
+  }
+  &:hover {
+    span {
+      width: 0;
+      margin-inline-end: 40px;
+      opacity: 0;
+    }
+    svg {
+      margin-inline-start: 60px;
+    }
+  }
+}
+
+.nav_wrapper {
+  .bevel_corner {
+    box-shadow: 0 0 0 1920px
+      rgba(map.get($color_map, 'primary'), 0.85);
+  }
+}

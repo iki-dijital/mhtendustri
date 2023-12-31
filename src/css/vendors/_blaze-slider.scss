@@ -1,0 +1,68 @@
+@use 'sass:list';
+
+// $example_map: ("2000px": (2, 10px), "1200": (3, 20px), "1024px": (4, 30px), "600px": (5,10px));
+
+@mixin responsive_width($rules_map) {
+  @each $bp, $ng in $rules_map {
+    @media screen and (max-width: $bp) {
+      --slides-to-show: #{list.nth($ng, 1)};
+      --slide-gap: #{list.nth($ng, 2)};
+    }
+  }
+}
+
+.blaze-slider {
+  --slides-to-show: 1;
+  --slide-gap: 0px;
+  direction: ltr;
+  [dir='rtl'] & {
+    direction: rtl;
+  }
+}
+
+#home_categories_blaze {
+  --slides-to-show: 3;
+  --slide-gap: 0px;
+  @include responsive_width(("991px": (2, 0px)));
+}
+
+#home_media_blaze {
+  --slides-to-show: 1;
+  --slide-gap: 0px;
+}
+
+#home_brands_blaze{
+  --slides-to-show: 4;
+  --slide-gap: 30px;
+  @include responsive_width(("991px": (2, 30px)));
+
+}
+
+.variation_sliders{
+  .blaze-sliderd{
+    --slides-to-show: 1;
+    --slide-gap: 0px;
+  }
+}
+
+.blaze-container {
+  position: relative;
+}
+
+.blaze-track-container {
+  overflow: hidden;
+}
+.blaze-track {
+  will-change: transform;
+  touch-action: pan-y;
+  display: flex;
+  gap: var(--slide-gap);
+  --slide-width: calc(
+    (100% - (var(--slides-to-show) - 1) * var(--slide-gap)) /
+      var(--slides-to-show)
+  );
+  & > * {
+    width: var(--slide-width);
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.spacing-8 {
+  letter-spacing: 8px;
+  @include max_responsive(xl){
+    letter-spacing: 4px;
+  }
+  @include max_responsive(lg){
+    letter-spacing: 2px;
+  }
+  @include max_responsive(md){
+    letter-spacing: 1px;
+  }
+}
+
+.paragraph_text {
+  p {
+    @extend %paragraph-p-elem;
+  }
+}

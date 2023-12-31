@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+$color_map: (
+    "primary": #E52329,
+    "dark": #121C22,
+);
+
+$default_colors: (
+  'white': #fff,
+  'transparent': transparent,
+  'black': #000,
+);
+
+$color_map: map.merge($color_map, $default_colors);
+
+
+$final_list: ();
