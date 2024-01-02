@@ -4,6 +4,7 @@ import { mobileMenu } from './lib/common';
 
 import BlazeSlider from 'blaze-slider';
 import GLightbox from 'glightbox';
+import Modal from "bootstrap/js/dist/modal";
 import Tab from 'bootstrap/js/dist/tab';
 
 mobileMenu();
@@ -297,4 +298,8 @@ productImages && new GLightbox({
   selector: '.glightbox_gallery'
 });
 
-/* ------ End Ürün Detay */
+const offerButton = document.getElementById('offer_btn');
+
+offerButton && new Modal(document.getElementById('product_offer_modal'));
+
+/* ------ End Ürün Detay ------ */

@@ -137,19 +137,17 @@
                         <a href="" class="drawing flex flex-col items-end gap-y-4.5 w-2/7">
                             <img src="<?= domain ?>assets/img/svg/teknik_resim.svg" alt="Teknik resim ikon" width="52"
                                 height="52" class="block w-13 aspect-square h-auto object-contain object-center">
-                            <span class="sliding_btn text-end">
-                                TEKNİK RESİM
-                                <?= getSprite("arrow_right") ?>
+                            <span class="sliding_btn text-end">TEKNİK RESİM<?= getSprite("arrow_right") ?>
                             </span>
                         </a>
-                        <a href="" class="offer flex flex-col items-end gap-y-4.5 w-2/7">
+                        <button data-bs-toggle="modal" data-bs-target="#product_offer_modal" type="button" class="offer flex flex-col items-end gap-y-4.5 w-2/7 bg-transparent border-none" id="offer_btn">
                             <img src="<?= domain ?>assets/img/svg/teklif.svg" alt="Teklif ikon" width="60" height="34"
                                 class="block w-15 h-auto object-contain object-center">
-                            <span class="sliding_btn text-end">
+                            <span class="sliding_btn text-end cursor-pointer">
                                 TEKLİF İSTE
                                 <?= getSprite("arrow_right") ?>
                             </span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -161,59 +159,51 @@
                 <h2 class="text-iki-4xl font-semibold my-0 leading-none">TEKNİK VERİLER</h2>
                 <div class="line"></div>
             </div>
-            <table class="mb-5.5">
-                <colgroup>
-                    <col class="w-1/6">
-                    <col class="w-1/6">
-                    <col class="w-1/6">
-                    <col class="w-1/6">
-                    <col class="w-1/6">
-                    <col class="w-1/6">
-                </colgroup>
-                <thead>
-                    <tr class="bg-primary">
-                        <th class="text-white font-semibold text-iki-base text-center leading-normal py-3.5 px-10">ÜRÜN
-                            KODU</th>
-                        <th class="text-white font-semibold text-iki-base text-center leading-normal py-3.5 px-10">
-                            BASAMAK SAYISI</th>
-                        <th class="text-white font-semibold text-iki-base text-center leading-normal py-3.5 px-10">
-                            MERDİVEN YÜKSEKLİĞİ (M)</th>
-                        <th class="text-white font-semibold text-iki-base text-center leading-normal py-3.5 px-10">*
-                            ULAŞILABİLEN YÜKSEKLİK (M)</th>
-                        <th class="text-white font-semibold text-iki-base text-center leading-normal py-3.5 px-10">
-                            AĞIRLIK (KG)</th>
-                        <th class="text-white font-semibold text-iki-base text-center leading-normal py-3.5 px-10">
-                            ÖLÇÜLER (WxLxH/cm.)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php for ($i = 1; $i <= 10; $i++): ?>
+            <div class="desc_content mb-20">
+                <table>
+                    <thead>
                         <tr>
-                            <td class="text-primary font-semibold text-iki-base text-center leading-normal p-2">SKY A
-                                <?= 331 + $i ?>
-                            </td>
-                            <td class="text-black font-light text-iki-base text-center leading-normal p-2">
-                                <?= rand(6, 22) ?>
-                            </td>
-                            <td class="text-black font-light text-iki-base text-center leading-normal p-2">
-                                <?= rand(100, 999) / 100 ?>
-                            </td>
-                            <td class="text-black font-light text-iki-base text-center leading-normal p-2">
-                                <?= rand(100, 999) / 100 ?>
-                            </td>
-                            <td class="text-black font-light text-iki-base text-center leading-normal p-2">
-                                <?= rand(100, 999) / 100 ?>
-                            </td>
-                            <td class="text-black font-light text-iki-base text-center leading-normal p-2">
-                                <?= rand(10, 99) ?>x
-                                <?= rand(100, 999) / 100 ?>x
-                                <?= rand(10, 99) / 10 ?>
-                            </td>
+                            <th>ÜRÜN
+                                KODU</th>
+                            <th>
+                                BASAMAK SAYISI</th>
+                            <th>
+                                MERDİVEN YÜKSEKLİĞİ (M)</th>
+                            <th>*
+                                ULAŞILABİLEN YÜKSEKLİK (M)</th>
+                            <th>
+                                AĞIRLIK (KG)</th>
+                            <th>
+                                ÖLÇÜLER (WxLxH/cm.)</th>
                         </tr>
-                    <?php endfor; ?>
-                </tbody>
-            </table>
-            <div class="desc_content technical_content mb-20">
+                    </thead>
+                    <tbody>
+                        <?php for ($i = 1; $i <= 10; $i++): ?>
+                            <tr>
+                                <td>SKY A
+                                    <?= 331 + $i ?>
+                                </td>
+                                <td>
+                                    <?= rand(6, 22) ?>
+                                </td>
+                                <td>
+                                    <?= rand(100, 999) / 100 ?>
+                                </td>
+                                <td>
+                                    <?= rand(100, 999) / 100 ?>
+                                </td>
+                                <td>
+                                    <?= rand(100, 999) / 100 ?>
+                                </td>
+                                <td>
+                                    <?= rand(10, 99) ?>x
+                                    <?= rand(100, 999) / 100 ?>x
+                                    <?= rand(10, 99) / 10 ?>
+                                </td>
+                            </tr>
+                        <?php endfor; ?>
+                    </tbody>
+                </table>
                 <p>* Kullanıcının ulaşabildiği ortalama güvenli yükseklik</p>
                 <h3>TEKNİK BİLGİLER</h3>
                 <ul>
@@ -315,7 +305,8 @@
                 <?php for ($i = 1; $i <= 12; $i++): ?>
                     <div class="col-lg-3">
                         <a href="<?= domain ?>assets/img/delete_prod_img_<?= $i % 5 + 1 ?>.webp"
-                            class="glightbox_gallery block relative aspect-square mb-7.5 border border-solid" data-glightbox="type:image">
+                            class="glightbox_gallery block relative aspect-square mb-7.5 border border-solid"
+                            data-glightbox="type:image">
                             <img src="<?= domain ?>assets/img/delete_prod_img_<?= $i % 5 + 1 ?>.webp" alt="Ürün görseli"
                                 loading="lazy" class="block w-full h-full object-cover object-center">
                             <div
@@ -380,5 +371,71 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" id="product_offer_modal" tabindex="-1" aria-labelledby="offer_modal_label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body flex flex-wrap w-full">
+                    <div class="w-7/12 pt-17 pl-7.5 pr-16">
+                        <form action="" class="offer_form">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <span class="font-semibold leading-none block mb-12.5">Teklif İste</span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="name" class="w-full block mb-2.5">
+                                        <input type="name" id="name" placeholder="İsim" class="w-full block py-3 bg-transparent text-black font-light text-iki-base leading-normal" required>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="surname" class="w-full block mb-2.5">
+                                        <input type="surname" id="surname" placeholder="Soyisim" class="w-full block py-3 bg-transparent text-black font-light text-iki-base leading-normal" required>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="email" class="w-full block mb-2.5">
+                                        <input type="email" id="email" placeholder="E-Posta" class="w-full block py-3 bg-transparent text-black font-light text-iki-base leading-normal">
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="phone" class="w-full block mb-2.5">
+                                        <input type="phone" id="phone" placeholder="Telefon" class="w-full block py-3 bg-transparent text-black font-light text-iki-base leading-normal" required>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="company" class="w-full block mb-2.5">
+                                        <input type="company" id="company" placeholder="Firma Adınız" class="w-full block py-3 bg-transparent text-black font-light text-iki-base leading-normal">
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="code" class="w-full block mb-2.5">
+                                        <input type="code" id="code" placeholder="Talep Edilen Ürün Kodu" class="w-full block py-3 bg-transparent text-black font-light text-iki-base leading-normal" required>
+                                    </label>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label for="message" class="w-full block mb-2.5">
+                                        <textarea name="message" id="message" placeholder="Notunuz" class="w-full block py-3 bg-transparent text-black font-light text-iki-base leading-normal"></textarea>
+                                    </label>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="flex items-center justify-between pt-5.5 pb-7.5">
+                                    <div class="g-recaptcha" data-sitekey="6LditkMpAAAAADh-hVmmMdW-Cigi9jj9453SgDmm"></div>
+                                        <button type="submit" class="bg-transparent border-none sliding_btn cursor-pointer">
+                                            GÖNDER
+                                            <?= getSprite("arrow_right") ?>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="w-5/12">
+                        <div id="offer_form_img" class="w-full h-full">
+                            <img src="<?=domain?>assets/img/delete_prod_1.webp" alt="Ürün teklif görseli" class="block w-full h-full object-contain object-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <?php include "footer.php"; ?>

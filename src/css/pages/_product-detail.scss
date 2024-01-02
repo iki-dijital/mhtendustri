@@ -183,9 +183,32 @@
   }
   table {
     border-collapse: collapse;
+    margin-block-end: 22px;
+  }
+  thead {
+    tr {
+      background-color: get-color(primary);
+      & > * {
+        width: 16.66667%;
+        color: #fff;
+        text-align: center;
+        padding: 14px 40px;
+        @include get_font(600, 15px, 1.5);
+      }
+    }
   }
   tbody {
     tr {
+      & > * {
+        width: 16.66667%;
+        text-align: center;
+        line-height: 1.5;
+        padding: 8px;
+        &:first-child {
+          font-weight: 600;
+          color: get-color(primary);
+        }
+      }
       &:nth-child(odd) {
         background-color: #fff;
       }
@@ -242,7 +265,6 @@
 }
 
 #product_documents {
-
   h2 {
     color: #d8d8d8;
   }
@@ -259,5 +281,46 @@
   .download_item {
     border: none;
     margin-block-end: 80px;
+  }
+}
+
+#product_offer_modal {
+  %input {
+    border-style: solid;
+    border-color: #b8b8b8;
+    border-width: 0 0 1px;
+    @include edit_placeholder {
+      color: #000;
+      opacity: 1;
+    }
+  }
+  .sliding_btn {
+    color: #000;
+    svg {
+      fill: get-color(primary);
+    }
+  }
+  .modal-dialog{
+    width: var(--container-width);
+    background-color: #fff;
+    max-width: var(--container-width);
+  }
+  .modal-body{
+    padding: 0;
+  }
+  .offer_form{
+    padding: 0 15px;
+    span{
+      font-size: 42px;
+      color: #9D9D9D;
+    }
+  }
+  input{
+    @extend %input;
+  }
+  textarea{
+    height: 220px;
+    resize: none;
+    @extend %input;
   }
 }

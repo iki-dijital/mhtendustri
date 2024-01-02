@@ -71,6 +71,8 @@ $inline_css = false;
             href="<?= domain ?>assets/css/main.css<?= $_SERVER['REMOTE_ADDR'] == '::1' ? '?v=' . rand() : '' ?>">
     <?php endif; ?>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body>
